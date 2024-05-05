@@ -1,5 +1,5 @@
 # Astral
-Official Source Code For The Discord Bot Xenos.
+Official Source Code For The Discord Bot Astral.
 
 # About Astral
 

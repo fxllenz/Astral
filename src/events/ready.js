@@ -1,3 +1,5 @@
+const { ActivityType } = require('discord.js');
+
 module.exports = {
     name: 'ready',
     once: true,
@@ -5,25 +7,23 @@ module.exports = {
         console.log(`(CLIENT) Logging In...`);
         console.log(`(CLIENT) Logged In To: ${client.user.username}`);
 
-        async function pickPresence () {
-            const option = Math.floor(Math.random() * statusArray.length);
+        const statuses = [
+            { name: `/help - ${client.guilds.cache.size} Servers`, type: ActivityType.Watching },
+            { name: `/help - ${client.users.cache.size} Users`, type: ActivityType.Watching },
+            { name: `/help - 24/7 Music Bot`, type: ActivityType.Watching }
+        ];
 
-            try {
-                await client.user.setPresence({
-                    activities: [
-                        {
-                            name: statusArray[option].content,
-                            type: statusArray[option].type,
+        function pickPresence() {
+            const randomIndex = Math.floor(Math.random() * statuses.length);
+            const selectedStatus = statuses[randomIndex];
 
-                        },
-                    
-                    ],
-
-                    status: statusArray[option].status
-                })
-            } catch (error) {
-                console.error(error);
-            }
+            client.user.setPresence({
+                activities: [{ name: selectedStatus.name, type: selectedStatus.type }],
+                status: 'online'
+            });
         }
+
+        pickPresence();
+        setInterval(pickPresence, 5000);
     },
 };

@@ -51,6 +51,7 @@ module.exports = {
     const queue = client.distube.getQueue(voiceChannel);
 
     if (queue && queue.songs.length > 0) {
+        await interaction.deferReply();
         client.distube.play(voiceChannel, song.url, { member, textChannel, interaction });
         const embed = new EmbedBuilder()
         .setColor('White')
@@ -64,7 +65,7 @@ module.exports = {
             { name: 'URL', value: `${song.url}`} 
         )
         .setImage(`${song.thumbnail}`)
-        return interaction.reply({ embeds: [embed], ephemeral: false });
+        return interaction.followUp({ embeds: [embed], ephemeral: false });
     } else {
         client.distube.play(voiceChannel, song.url, { member, textChannel, interaction });
         const embed = new EmbedBuilder()

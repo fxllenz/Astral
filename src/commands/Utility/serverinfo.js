@@ -21,12 +21,12 @@ module.exports = {
             .setTitle(guild.name)
             .setThumbnail(serverIcon)
             .addFields(
-                { name: 'Text Channels', value: `${text}`},
-                { name: 'Voice Channels', value: `${voice}`},
-                { name: 'Members', value: `${membersCount}`},
-                { name: 'Roles', value: `${rolesCount}`},
-                { name: 'Owner', value: `${owner}`},
-                { name: 'Created At', value: `${createdDate}`},
+                { name: 'Text Channels', value: `${text}`, inline: true},
+                { name: 'Voice Channels', value: `${voice}`, inline: true},
+                { name: 'Members', value: `${membersCount}`, inline: true},
+                { name: 'Roles', value: `${rolesCount}`, inline: true},
+                { name: 'Owner', value: `${owner}`, inline: true},
+                { name: 'Created At', value: `${createdDate}`, inline: true},
             )
             .setTimestamp();
 

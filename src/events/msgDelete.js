@@ -2,7 +2,7 @@ const { WebhookClient, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'messageDelete',
-    async execute(deletedMessage, webhookURL) {
+    async execute(deletedMessage, webhookURL,client) {
         if (deletedMessage.author) {
             let messageContent = `**Message Deleted**\n`;
             messageContent += `Author: ${deletedMessage.author.tag}\n`;
@@ -15,7 +15,7 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setColor('Red')
                 .setDescription(messageContent);
-            const webhookURL = 'https://discord.com/api/webhooks/';
+            const webhookURL = process.env.WebhookUrl;
             const webhook = new WebhookClient({ url: webhookURL });
             webhook.send({ embeds: [embed] })
                 .catch(error => console.error('Error sending deleted message log:', error));

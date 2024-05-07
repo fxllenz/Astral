@@ -4,13 +4,12 @@ module.exports = {
     name: 'ready',
     once: true,
     async execute(client) {
-        console.log(`(CLIENT) Logging In...`);
-        console.log(`(CLIENT) Logged In To: ${client.user.username}`);
+        console.log("\x1b[31m%s\x1b[0m", '(CLIENT)', '\x1b[37m\x1b[0m', `Logged In...`);
+        console.log("\x1b[31m%s\x1b[0m", '(CLIENT)', '\x1b[37m\x1b[0m', `Logged Into: ${client.user.username}`);
 
         const statuses = [
             { name: `/help - ${client.guilds.cache.size} Servers`, type: ActivityType.Watching },
-            { name: `/help - ${client.users.cache.size} Users`, type: ActivityType.Watching },
-            { name: `/help - 24/7 Music Bot`, type: ActivityType.Watching }
+            { name: `/help - Astral Dev Team`, type: ActivityType.Watching },
         ];
 
         function pickPresence() {

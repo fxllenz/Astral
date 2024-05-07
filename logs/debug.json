@@ -1,0 +1,107 @@
+[
+  {
+    "timestamp": "2024-05-07 23:42",
+    "level": "debug",
+    "message": "(EVENT) Refreshed application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-07 23:42",
+    "level": "debug",
+    "message": "(EVENT) Reloaded application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-07 23:42",
+    "level": "debug",
+    "message": "(CLIENT) Logging In..."
+  },
+  {
+    "timestamp": "2024-05-07 23:45",
+    "level": "debug",
+    "message": "(EVENT) Refreshed application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-07 23:45",
+    "level": "debug",
+    "message": "(EVENT) Reloaded application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-07 23:45",
+    "level": "debug",
+    "message": "(CLIENT) Logging In..."
+  },
+  {
+    "timestamp": "2024-05-08 00:11",
+    "level": "debug",
+    "message": "(EVENT) Refreshed application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:11",
+    "level": "debug",
+    "message": "(EVENT) Reloaded application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:11",
+    "level": "debug",
+    "message": "(CLIENT) Logging In..."
+  },
+  {
+    "timestamp": "2024-05-08 00:15",
+    "level": "debug",
+    "message": "(EVENT) Refreshed application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:15",
+    "level": "debug",
+    "message": "(EVENT) Reloaded application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:15",
+    "level": "debug",
+    "message": "(CLIENT) Logging In..."
+  },
+  {
+    "timestamp": "2024-05-08 00:20",
+    "level": "debug",
+    "message": "(EVENT) Refreshed application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:20",
+    "level": "debug",
+    "message": "(EVENT) Reloaded application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:20",
+    "level": "debug",
+    "message": "(CLIENT) Logging In..."
+  },
+  {
+    "timestamp": "2024-05-08 00:22",
+    "level": "debug",
+    "message": "(EVENT) Refreshed application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:22",
+    "level": "debug",
+    "message": "(EVENT) Reloaded application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:22",
+    "level": "debug",
+    "message": "(CLIENT) Logging In..."
+  },
+  {
+    "timestamp": "2024-05-08 00:23",
+    "level": "debug",
+    "message": "(EVENT) Refreshed application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:24",
+    "level": "debug",
+    "message": "(EVENT) Reloaded application {/} commands."
+  },
+  {
+    "timestamp": "2024-05-08 00:24",
+    "level": "debug",
+    "message": "(CLIENT) Logging In..."
+  }
+]

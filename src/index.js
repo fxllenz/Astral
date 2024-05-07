@@ -2,6 +2,8 @@ const { Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permission
 const fs = require('fs');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates] });
 client.commands = new Collection();
+const Logger = require('./system/logger');
+client.logger = new Logger(client, { level: 'info' });
 const config = require('./settings/config.js')(client);
 require('dotenv').config();
 client.config = config;

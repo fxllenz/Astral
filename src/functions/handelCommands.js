@@ -22,7 +22,7 @@ module.exports = (client) => {
 
         (async () => {
             try {
-                console.log('(EVENT) Refreshed application {/} commands.');
+                client.logger.debug('(EVENT) Refreshed application {/} commands.');
 
                 await rest.put(
                     Routes.applicationCommands(config.clientId), {
@@ -30,7 +30,7 @@ module.exports = (client) => {
                     },
                 );
 
-                console.log('(EVENT) Reloaded application {/} commands.');
+                client.logger.debug('(EVENT) Reloaded application {/} commands.');
             } catch (error) {
                 console.error(error);
             }

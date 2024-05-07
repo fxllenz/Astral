@@ -14,7 +14,7 @@ module.exports = {
 
             await command.execute(interaction, client);
         } catch (error) {
-            console.log(error);
+            client.logger.error(error);
             await interaction.reply({
                 content: 'There was an error while executing this command!', 
                 ephemeral: true

@@ -1,11 +1,10 @@
-const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
-const simplydjs = require('simply-djs');
-module.exports = {
-    data: new SlashCommandBuilder()
-        .setName('embed-builder')
-        .setDescription('the name says everything'),
-    async execute(interaction, client) {
+const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
+const { ChannelType } = require('discord.js');
 
+const simplydjs = require('simply-djs');
+async function execute(interaction, client) {
+  try {
+   
       simplydjs.embedCreator(interaction, { 
         strict: true,
         embed: {
@@ -17,7 +16,14 @@ module.exports = {
           thumbnail: `${client.user.displayAvatarURL()}`
         }
       })
-  
 
-    }
+    
+  } catch (error) {
+    console.log(`Error processing ping command for user ${interaction.user.username}: ${error}`);
+    await interaction.channel.send(`[ERROR] Oh no, my dear friend, it seems there was an issue with your request. Please try again, and I'll do my best to assist you.`);
+  }
+}
+
+module.exports = {
+  execute,
 };

@@ -102,6 +102,7 @@ module.exports = {
             const rolesCount = guild.roles.cache.size;
             const owner = await guild.fetchOwner();
             const createdDate = guild.createdAt.toLocaleDateString();
+            const createdTimestamp = guild.createdAt.getTime();
             const serverIcon = guild.iconURL({ dynamic: true });
             const embed = new EmbedBuilder()
                 .setColor('DarkBlue')
@@ -113,8 +114,9 @@ module.exports = {
                     { name: 'Members', value: `${membersCount}`, inline: true },
                     { name: 'Roles', value: `${rolesCount}`, inline: true },
                     { name: 'Owner', value: `${owner}`, inline: true },
-                    { name: 'Created At', value: `${createdDate}`, inline: true }
                 )
+                
+                .addFields({ name: "Server Created", value: `<t:${parseInt(createdTimestamp / 1000 )}:R>`, inline: true })
                 .setTimestamp();
             await interaction.reply({ embeds: [embed], ephemeral: false });
 

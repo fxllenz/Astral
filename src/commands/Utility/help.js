@@ -20,10 +20,11 @@ module.exports = {
                 .setDescription('**Command Count:** 5\n')
                 .setTimestamp()
                 .addFields({ name: "</help:1236794937626984465>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
-                .addFields({ name: "</ping:1236794937626984466>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
-                .addFields({ name: "</avatar:1236794937626984464>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
-                .addFields({ name: "</userinfo:1236794937807212615>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
-                .addFields({ name: "</serverinfo:1236794937626984467>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
+                .addFields({ name: "</ping:1237517673877868576>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
+                .addFields({ name: "</avatar:1237517673877868575>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
+                .addFields({ name: "</userinfo:1237517673877868578>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
+                .addFields({ name: "</serverinfo:1237517673877868577>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
+                .addFields({ name: "</member-count:1237526017325928458>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
                 .setColor('DarkBlue')
                 
 
@@ -33,13 +34,23 @@ module.exports = {
                 .setColor('DarkBlue')
                 .setDescription('**Command Count:** 6')
                 .setTimestamp()
-                .addFields({ name: "<a:emoji_1:1236500252215873687> /work", value: ` `, inline: true})
-                .addFields({ name: "<a:emoji_1:1236500252215873687> /beg", value: ` `, inline: true})
-                .addFields({ name: "<a:emoji_1:1236500252215873687> /deposit", value: ` `, inline: true})
-                .addFields({ name: "<a:emoji_1:1236500252215873687> /withdraw", value: ` `, inline: true})
-                .addFields({ name: "<a:emoji_1:1236500252215873687> /bet", value: ` `, inline: true})
-                .addFields({ name: "<a:emoji_1:1236500252215873687> /balance", value: ` `, inline: true})
+                .addFields({ name: "</work:1236794937626984463>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
+                .addFields({ name: "</beg:1236794937626984459>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</deposit:1236794937626984461>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</withdraw:1236794937626984462>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</bet:1236794937626984460>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</balance:1236794937626984458>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
 
+
+                const fun = new EmbedBuilder()
+                .setTitle("Fun Commands")
+                .setColor('DarkBlue')
+                .setDescription('**Command Count:** 3')
+                .setTimestamp()
+                .addFields({ name: "</howgay:1237478186669834293>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</random-number:1237480302709047316>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</8ball:1237532348715761756>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                
 
 
 
@@ -53,6 +64,13 @@ module.exports = {
                     .setEmoji({ id: '1236798128141897771', name: 'mod', animated: false})
                     .setDescription(`Shows All Utility Commands`)
                     .setValue("support-server"),
+
+
+                    new StringSelectMenuOptionBuilder()
+                    .setLabel("Fun Commands")
+                    .setEmoji({ id: '1237521479390986311', name: 'fun', animated: false})
+                    .setDescription(`Shows All Fun Commands`)
+                    .setValue("fun"),
 
 
 
@@ -83,6 +101,9 @@ module.exports = {
                         		break;
                     			case 'support-server':
                        				responseEmbed = embed3;
+                        		break;
+                                case 'fun':
+                       				responseEmbed = fun;
                         		break;
                     			default:
                         			responseEmbed = startEmbed;

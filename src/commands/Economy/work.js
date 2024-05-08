@@ -10,8 +10,6 @@ module.exports = {
         const userId = interaction.user.id;
         const username = interaction.user.username;
         const amountEarned = Math.floor(Math.random() * 901) + 100;
-
-        // Read the data from data.json
         fs.readFile('data.json', 'utf8', (err, data) => {
             if (err) {
                 console.error(err);

@@ -36,6 +36,10 @@ module.exports = {
         afkData[guildId] = afkData[guildId] || {};
         afkData[guildId][userId] = reason;
         saveAFKData(afkData);
+        const embed = new EmbedBuilder()
+            .setColor('DarkBlue')
+            .setTitle('AFK Set')
+            .setDescription(`**You Have Been Set As AFK.** Reason: ${reason}`)
 
         await interaction.reply(`You have been set as AFK. Reason: ${reason}`);
     },

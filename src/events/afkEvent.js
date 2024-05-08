@@ -16,8 +16,6 @@ function saveAFKData(data) {
     fs.writeFileSync(AFK_DATA_FILE, JSON.stringify(data, null, 4), 'utf8');
 }
 
-
-// Listen for messages and check for AFK users
 module.exports = {
     name: 'messageCreate',
     async execute(message) {

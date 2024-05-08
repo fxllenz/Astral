@@ -17,7 +17,7 @@ module.exports = {
         
                 const embed3 = new EmbedBuilder()
                 .setTitle("Utility Commands")
-                .setDescription('**Command Count:** 5\n')
+                .setDescription('**Command Count:** 7')
                 .setTimestamp()
                 .addFields({ name: "</help:1236794937626984465>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
                 .addFields({ name: "</ping:1237517673877868576>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
@@ -25,6 +25,8 @@ module.exports = {
                 .addFields({ name: "</userinfo:1237517673877868578>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
                 .addFields({ name: "</serverinfo:1237517673877868577>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
                 .addFields({ name: "</member-count:1237526017325928458>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
+                .addFields({ name: "</afk-set:1237588829494313060>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
+              
                 .setColor('DarkBlue')
                 
 
@@ -45,11 +47,22 @@ module.exports = {
                 const fun = new EmbedBuilder()
                 .setTitle("Fun Commands")
                 .setColor('DarkBlue')
-                .setDescription('**Command Count:** 3')
+                .setDescription('**Command Count:** 4')
                 .setTimestamp()
                 .addFields({ name: "</howgay:1237478186669834293>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
                 .addFields({ name: "</random-number:1237480302709047316>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
                 .addFields({ name: "</8ball:1237532348715761756>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</weather:1237555843449229363>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                
+
+
+                const owner = new EmbedBuilder()
+                .setTitle("Owner Commands")
+                .setColor('DarkBlue')
+                .setDescription('**Command Count:** 1')
+                .setTimestamp()
+                .addFields({ name: "</systeminfo:1237545231415644200>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+               
                 
 
 
@@ -58,6 +71,12 @@ module.exports = {
                 .setCustomId("guild")
                 .setPlaceholder("Select A Category")
                 .addOptions(
+
+                    new StringSelectMenuOptionBuilder()
+                    .setLabel("Home Page")
+                    .setEmoji({ id: '1237589752870338560', name: 'home', animated: false})
+                    .setDescription(`Go Back To The Home Page`)
+                    .setValue("home"),
 
                     new StringSelectMenuOptionBuilder()
                     .setLabel("Utility Commands")
@@ -73,12 +92,22 @@ module.exports = {
                     .setValue("fun"),
 
 
+                  
+
 
                     new StringSelectMenuOptionBuilder()
                     .setLabel("Economy Commands")
                     .setEmoji({ id: '1236798133279658035', name: 'economy', animated: false})
                     .setDescription(`Shows All Economy Commands`)
                     .setValue("economy-cmds"),
+
+
+
+                    new StringSelectMenuOptionBuilder()
+                    .setLabel("Owner Commands")
+                    .setEmoji({ id: '1236798125885096119', name: 'owner', animated: false})
+                    .setDescription(`Shows The Commands Only The Owner Can Use`)
+                    .setValue("owner"),
                 )
         
                     const row = new ActionRowBuilder().addComponents(select)
@@ -104,6 +133,13 @@ module.exports = {
                         		break;
                                 case 'fun':
                        				responseEmbed = fun;
+                        		break;
+
+                                case 'owner':
+                       				responseEmbed = owner;
+                        		break;
+                                case 'home':
+                       				responseEmbed = startEmbed;
                         		break;
                     			default:
                         			responseEmbed = startEmbed;

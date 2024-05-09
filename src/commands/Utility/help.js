@@ -17,7 +17,7 @@ module.exports = {
         
                 const embed3 = new EmbedBuilder()
                 .setTitle("Utility Commands")
-                .setDescription('**Command Count:** 7')
+                .setDescription('**Command Count:** 8')
                 .setTimestamp()
                 .addFields({ name: "</help:1236794937626984465>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
                 .addFields({ name: "</ping:1237517673877868576>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
@@ -26,7 +26,7 @@ module.exports = {
                 .addFields({ name: "</serverinfo:1237517673877868577>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
                 .addFields({ name: "</member-count:1237526017325928458>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
                 .addFields({ name: "</afk-set:1237588829494313060>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
-              
+                .addFields({ name: "</translate:1237911833462046780>", value: `**Status:** <:on:1236814914656407562>`, inline: true})
                 .setColor('DarkBlue')
                 
 
@@ -47,12 +47,13 @@ module.exports = {
                 const fun = new EmbedBuilder()
                 .setTitle("Fun Commands")
                 .setColor('DarkBlue')
-                .setDescription('**Command Count:** 4')
+                .setDescription('**Command Count:** 5')
                 .setTimestamp()
                 .addFields({ name: "</howgay:1237478186669834293>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
                 .addFields({ name: "</random-number:1237480302709047316>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
                 .addFields({ name: "</8ball:1237532348715761756>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
                 .addFields({ name: "</weather:1237555843449229363>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</action:1237912551984070676>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
                 
 
 
@@ -63,7 +64,15 @@ module.exports = {
                 .setTimestamp()
                 .addFields({ name: "</systeminfo:1237545231415644200>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
                
-                
+                const moderation = new EmbedBuilder()
+                .setTitle("Moderation Commands")
+                .setColor('DarkBlue')
+                .setDescription('**Command Count:** 3')
+                .setTimestamp()
+                .addFields({ name: "</warns:1237912551984070678>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</warn add:1237912551984070677>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+                .addFields({ name: "</warn remove:1237912551984070677>", value: `**Status:** <:on:1236814914656407562> `, inline: true})
+               
 
 
 
@@ -101,6 +110,12 @@ module.exports = {
                     .setDescription(`Shows All Economy Commands`)
                     .setValue("economy-cmds"),
 
+                    new StringSelectMenuOptionBuilder()
+                    .setLabel("Moderation Commands")
+                    .setEmoji({ id: '1237915487308877924', name: 'moderation', animated: false})
+                    .setDescription(`Shows All Moderation Commands`)
+                    .setValue("mod-cmds"),
+
 
 
                     new StringSelectMenuOptionBuilder()
@@ -134,6 +149,9 @@ module.exports = {
                                 case 'fun':
                        				responseEmbed = fun;
                         		break;
+                                case 'mod-cmds':
+                                    responseEmbed = moderation;
+                                break;
 
                                 case 'owner':
                        				responseEmbed = owner;

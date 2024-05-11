@@ -10,7 +10,7 @@ module.exports = {
         
                 const startEmbed = new EmbedBuilder()
                 .setTitle(`❓ Help Menu`)
-                .setDescription(`🔗 **Links:**\n[Add Astral](https://discord.com/oauth2/authorize?client_id=1236793738211233863&permissions=1375396554838&scope=bot)\n[Astral Support](https://discord.gg/UnbQujK4MV)\n\n👋 **About Astral**\n*Astral Is A Discord Bot, With Fun, Economy, Utility & More!*\n\n<a:ping:1236105773998931979> **Astral Network**\n**Bot Ping:** ${client.ws.ping}ms\n**Shard Count:** \`\`0\`\`\n**Shard ID: ** \`\`N/A\`\``)
+                .setDescription(`🔗 **Links:**\n<:point:1236798131509923951> [Add Astral](https://discord.com/oauth2/authorize?client_id=1236793738211233863&permissions=1375396554838&scope=bot)\n<:point:1236798131509923951> [Astral Support](https://discord.gg/UnbQujK4MV)\n<:topgg:1237976401609625610> [Top.gg](https://top.gg/bot/1236793738211233863)\n\n👋 **About Astral**\n*Astral Is A Discord Bot, With Fun, Economy, Utility & More!*\n\n<a:ping:1236105773998931979> **Astral Network**\n**Bot Ping:** ${client.ws.ping}ms\n**Shard Count:** \`\`0\`\`\n**Shard ID: ** \`\`N/A\`\``)
                 .setTimestamp()
                 .setFooter({ text: '© | Astral Development | 2024 - 2024'})
                 .setColor('DarkBlue')

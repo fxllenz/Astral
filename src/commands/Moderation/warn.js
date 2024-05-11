@@ -29,6 +29,17 @@ module.exports = {
                         .setRequired(true)
                 )
         )
+        .addSubcommand(subcommand => 
+            subcommand
+                .setName('list')
+                .setDescription('List a user\'s warnings')
+                .addUserOption(option =>
+                    option.setName('user')
+                        .setDescription('The user to check')
+                        .setRequired(true)
+                )
+
+        )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('remove')
@@ -45,9 +56,8 @@ module.exports = {
 
         if (!member.permissions.has('KICK_MEMBERS')) {
             const embed = new EmbedBuilder()
-                .setColor('DarkBlue')
-                .setTitle('Insufficient Permissions')
-                .setDescription('You do not have the required permissions to use this command.')
+        .setDescription('**You Do Not Have The \`\`KickMembers\`\` Permission.**')
+        .setColor('DarkBlue')
                 .setTimestamp();
 
             await interaction.reply({
@@ -55,6 +65,46 @@ module.exports = {
                 ephemeral: true
             });
             return;
+        }
+        if (subcommand === 'list') {
+            const targetUser = options.getUser('user');
+
+        const warningsData = JSON.parse(fs.readFileSync('warnings.json', 'utf8'));
+
+        const targetWarnings = warningsData[targetUser.id] || [];
+
+        if (targetWarnings.length === 0) {
+            const embed = new EmbedBuilder()
+                .setColor('DarkBlue')
+                .setTitle(`Warnings for ${targetUser.username}`)
+                .setDescription(`${targetUser.username} has no warnings.`)
+                .setTimestamp();
+
+            await interaction.reply({
+                embeds: [embed],
+                ephemeral: false
+            });
+            return;
+        }
+
+        const warningsEmbed = new EmbedBuilder()
+            .setColor('DarkBlue')
+            .setTitle(`Warnings for ${targetUser.username}`)
+            .setTimestamp();
+
+        targetWarnings.forEach((warning) => {
+            const moderatorUser = interaction.client.users.cache.get(warning.moderatorId);
+            warningsEmbed.addFields({
+                name: `Warning ID: ${warning.id}`,
+                value: `Reason: ${warning.reason}\nTimestamp: <t:${Math.floor(warning.timestamp / 1000)}:F>\nIssued by: ${userMention(moderatorUser.id)}`,
+                inline: false
+            });
+        });
+
+        await interaction.reply({
+            embeds: [warningsEmbed],
+            ephemeral: false
+        });
         }
 
         if (subcommand === 'add') {
@@ -85,6 +135,19 @@ module.exports = {
         } else if (subcommand === 'remove') {
             const warningId = options.getString('warning_id');
             const warningsData = JSON.parse(fs.readFileSync('warnings.json', 'utf8'));
+
+            if (!member.permissions.has('KICK_MEMBERS')) {
+                const embed = new EmbedBuilder()
+            .setDescription('**You Do Not Have The \`\`KickMembers\`\` Permission.**')
+            .setColor('DarkBlue')
+                    .setTimestamp();
+    
+                await interaction.reply({
+                    embeds: [embed],
+                    ephemeral: true
+                });
+                return;
+            }
 
             let targetUser, targetWarning, moderatorUser;
             for (const [userId, warnings] of Object.entries(warningsData)) {

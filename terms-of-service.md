@@ -36,7 +36,7 @@ We may terminate or suspend access to Astral immediately, without prior notice o
 These Terms shall be governed and construed in accordance with the laws of the United Kingdom, without regard to its conflict of law provisions.
 
 # Contact Us:
-If you have any questions about these Terms, please contact us at [Your Contact Information].
+If you have any questions about these Terms, please contact me on discord, my username is fxllout.dev.
 
 By using Astral, you acknowledge that you have read, understood, and agree to be bound by these Terms.
 

@@ -5,7 +5,7 @@ Effective Date: 5/5/2024
 Welcome to Astral! These Terms of Service ("Terms") govern your use of Astral, a Discord bot created by Fxllout ("we," "us," or "our"). By using Astral, you agree to these Terms. Please read them carefully.
 
 Description of Astral:
-Astral is a Discord bot designed to enhance your Discord server experience by providing various features and functionalities, including but not limited to [list main functionalities here].
+Astral is a Discord bot designed to enhance your Discord server experience by providing various features and functionalities, including but not limited to utility, economy, moderation and more].
 
 # Acceptance of Terms:
 By using Astral, you agree to be bound by these Terms. If you do not agree to these Terms, you may not use Astral.
